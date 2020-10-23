@@ -35,12 +35,44 @@ public:
 	}
 	static void zadaniaZeWskaznikow() {
 		cout << "TODO: zadanie ze wskaznikow\n";
+		//zadanie pierwsze
 		//napisać ilustrację działania wskaźnika na int,
 		//tzn zaalokować wskaźnik, nadać mu wartość a potem zwolnić wskaźnik:
-		int *wskI = new(int);
-		*wskI = 7;
-		assert(*wskI == 7);
-		delete wskI;
+		{
+			int* wskI = new(int);
+			*wskI = 7;
+			assert(*wskI == 7); //test poprawności alokacji 
+			delete wskI;
+		}
+		//-------------------------
+		//zadanie drugie: napisać kod który wskazuje na zmienną int i
+		//i sprawdza (przez assert) czy ten wskaźnik faktycznie wskazuje na 7.
+		{
+			int i = 7;
+			int* wskI = &i; //tu tworzymy wskazanie na zmienną i
+			assert(*wskI == 7); //test poprawności wskazania
+		}
+		//zadanie trzecie (napisać sumowanie liczb w tablicy ale 
+        //za pomocą wskaźników).
+		{
+			//TODO zadanie domowe: opracować przebieg
+			//ale z generowaniem ''losowej'' tablicy o ''losowym''
+			//rozmiarze np od 2 -- 100;
+			int tab[] = { 30, 31, 20, 5 };
+			int sigma = 0;
+			for (int el : tab) sigma += el;
+			cout << "Suma tablicy wyliczona klasycznie to: " << sigma << endl;
+			// to samo ale na wskaźnikach:
+			int* wskI = tab; //aby wskazać jawnie rzutowanie
+			// to można użyć tej konstrukcji int *wskI = (int *)tab;
+			int sigma2 = 0;
+						
+			for (int j = 0; j < sizeof(tab) / sizeof(tab[0]); j++) {
+				sigma2 += *(wskI++);
+			}
+			cout << "Suma tablicy wyliczona wskaznikami to: " << sigma2 << endl;
+
+		}
 	}
 };
 

@@ -19,6 +19,6 @@ string ListaFormatowana::formatuj(const string &txt_p)
     #define	MAX_DLUGOSC_LINII 50
 	#define ZNAK_CENTROWANIA '-'  */
 	if (txt_p.length() > MAX_DLUGOSC_LINII) return txt_p;
-	int ile = (MAX_DLUGOSC_LINII - txt_p.length()) / 2;
+	int ile = (MAX_DLUGOSC_LINII - (int)txt_p.length()) / 2;
 	return string(ile, ZNAK_CENTROWANIA) + txt_p + string(ile, ZNAK_CENTROWANIA);
 }
