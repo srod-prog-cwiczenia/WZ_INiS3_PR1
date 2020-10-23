@@ -71,6 +71,21 @@ public:
 				sigma2 += *(wskI++);
 			}
 			cout << "Suma tablicy wyliczona wskaznikami to: " << sigma2 << endl;
+		}
+		{
+			// zadanie czwarte:
+			// mając daną deklarację dwuwymiarowej tablicy:
+			int tab2[10][10]; 
+			// uzupełnić ją iloczynami (klasyczne rozwiązanie - banalne)
+			// ale używając technologii wskaźników:
+			//int** wskI = (int **)tab2; //źle!!! bo tab2 to tak naprawdę int*
+			int* wskI = (int *)tab2;
+			for (int i = 0; i < 100; i++) {
+				*(wskI++) = i;
+			}
+			for (int i = 0; i < 10; (i++, cout << endl))
+				for (int j = 0; j < 10; j++)
+					cout << tab2[i][j] << "\t";
 
 		}
 	}
