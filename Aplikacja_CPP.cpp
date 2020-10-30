@@ -90,15 +90,28 @@ public:
 
 		}
 	}
+	static void losowaTabIntFactory() {
+		//TODO zadanie domowe: opracować przebieg
+		//ale z generowaniem ''losowej'' tablicy o ''losowym''
+		//rozmiarze np od 2 -- 100 (na początek o stałym rozmiarze)
+    #define ROZMIAR_TAB_LOSOWEJ 10
+		int *tab = new int[ROZMIAR_TAB_LOSOWEJ];
+		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
+			tab[j] = rand() % 1000;
+		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
+			cout << tab[j] << ", ";
+		cout << endl;
+		delete[] tab;
+	}
 };
 
 
-int main()
-{//zadanie : dorobić proste menu:
+int main() {
+	srand(time(NULL));
 	for(;;) {
 		TMenu* mnu = new TMenu();
-		mnu->addAll(2, "Zadania z obiektow",
-		  "Zadania ze wskaźników");
+		mnu->addAll(3, "Zadania z obiektow",
+		  "Zadania ze wskaźników", "Losowa tablica");
 		auto opcja = mnu->wybierz();
 		switch (opcja) {
 		case 1:
@@ -106,6 +119,9 @@ int main()
 			break;
 		case 2:
 			Zadania::zadaniaZeWskaznikow();
+			break;
+		case 3:
+			Zadania::losowaTabIntFactory();
 			break;
 		default:
 			break;
