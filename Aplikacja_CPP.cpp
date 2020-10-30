@@ -12,6 +12,9 @@ void podkreslenie() {
 //zadanie: utworzyć tutaj klasę Zadania
 //i wypełnić ją metodami statycznymi zadaniaZObiektow oraz zadaniaZeWskaznikow()
 class Zadania {
+private:
+	//#define ROZMIAR_TAB_LOSOWEJ 10
+	static constexpr auto ROZMIAR_TAB_LOSOWEJ = 10;
 public:
 	static void zadaniaZObiektow() {
 		//std::cout << "Hello World!\n"; 
@@ -90,17 +93,28 @@ public:
 
 		}
 	}
-	static void losowaTabIntFactory() {
+	static int* losowaTabIntFactory() {
 		//TODO zadanie domowe: opracować przebieg
 		//ale z generowaniem ''losowej'' tablicy o ''losowym''
 		//rozmiarze np od 2 -- 100 (na początek o stałym rozmiarze)
-    #define ROZMIAR_TAB_LOSOWEJ 10
 		int *tab = new int[ROZMIAR_TAB_LOSOWEJ];
 		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
 			tab[j] = rand() % 1000;
-		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
+		/*for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
 			cout << tab[j] << ", ";
+		cout << endl;*/
+		return tab;
+		//delete[] tab;
+	}
+	static void sumowanieTablicyLosowej() {
+		int* tab = losowaTabIntFactory();
+		auto sigma = 0;
+		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++) {
+			cout << tab[j] << ", ";
+			sigma += tab[j];
+		}
 		cout << endl;
+		cout << "Suma: " << sigma << endl;
 		delete[] tab;
 	}
 };
@@ -121,7 +135,7 @@ int main() {
 			Zadania::zadaniaZeWskaznikow();
 			break;
 		case 3:
-			Zadania::losowaTabIntFactory();
+			Zadania::sumowanieTablicyLosowej();
 			break;
 		default:
 			break;
