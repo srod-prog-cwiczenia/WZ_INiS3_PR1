@@ -4,6 +4,7 @@
 #include "pch.h"
 #include "Lista.h"
 #include "ListaFormatowana.h"
+#include "TMenu.h"
 
 void podkreslenie() {
 	cout << "-----------------------------------\n";
@@ -81,7 +82,7 @@ public:
 			//int** wskI = (int **)tab2; //źle!!! bo tab2 to tak naprawdę int*
 			int* wskI = (int *)tab2;
 			for (int i = 0; i < 100; i++) {
-				*(wskI++) = i;
+				*(wskI++) = (i / 10 + 1) * (i % 10 + 1);
 			}
 			for (int i = 0; i < 10; (i++, cout << endl))
 				for (int j = 0; j < 10; j++)
@@ -95,22 +96,23 @@ public:
 int main()
 {//zadanie : dorobić proste menu:
 	for(;;) {
-		cout << "1. Zadania z obiektow\n";
-		cout << "2. Zadania ze wskaźników\n";
-		cout << "0. Wyjście\n";
-		string opcja;
-		cin >> opcja;
-		if (opcja.empty() || opcja[0] == '0') break;
-		switch (opcja[0]) {
-		case '1':
+		TMenu* mnu = new TMenu();
+		mnu->addAll(3, "1. Zadania z obiektow\n",
+		  "2. Zadania ze wskaźników\n",
+		  "0. Wyjście");
+		auto opcja = mnu->wybierz();
+		switch (opcja) {
+		case 1:
 			Zadania::zadaniaZObiektow();
 			break;
-		case '2':
+		case 2:
 			Zadania::zadaniaZeWskaznikow();
 			break;
 		default:
 			break;
 		}
+		delete mnu;
+		if (!opcja) break;  //bardziej zrozumiale: if (opcja == 0) break;
 	};
 }
 
