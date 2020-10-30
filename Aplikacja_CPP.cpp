@@ -97,9 +97,8 @@ int main()
 {//zadanie : dorobić proste menu:
 	for(;;) {
 		TMenu* mnu = new TMenu();
-		mnu->addAll(3, "1. Zadania z obiektow\n",
-		  "2. Zadania ze wskaźników\n",
-		  "0. Wyjście");
+		mnu->addAll(2, "Zadania z obiektow",
+		  "Zadania ze wskaźników");
 		auto opcja = mnu->wybierz();
 		switch (opcja) {
 		case 1:
