@@ -14,7 +14,7 @@ void podkreslenie() {
 class Zadania {
 private:
 	//#define ROZMIAR_TAB_LOSOWEJ 10
-	static constexpr auto ROZMIAR_TAB_LOSOWEJ = 10;
+	//static constexpr auto ROZMIAR_TAB_LOSOWEJ = 10; - przypuszczalnie już zbędna
 public:
 	static void zadaniaZObiektow() {
 		//std::cout << "Hello World!\n"; 
@@ -93,24 +93,27 @@ public:
 
 		}
 	}
-	static int* losowaTabIntFactory() {
+	static int* losowaTabIntFactory(unsigned int &dlugosc_p) {
 		//TODO zadanie domowe: opracować przebieg
 		//ale z generowaniem ''losowej'' tablicy o ''losowym''
 		//rozmiarze np od 2 -- 100 (na początek o stałym rozmiarze)
-		int *tab = new int[ROZMIAR_TAB_LOSOWEJ];
-		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
+		dlugosc_p = 10 + rand() % 100;
+		int *tab = new int[dlugosc_p];
+		for (int j = 0; j < dlugosc_p; j++)
 			tab[j] = rand() % 1000;
-		/*for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++)
+		/*for (int j = 0; j < dlugosc_p; j++)
 			cout << tab[j] << ", ";
 		cout << endl;*/
 		return tab;
 		//delete[] tab;
 	}
 	static void sumowanieTablicyLosowej() {
-		int* tab = losowaTabIntFactory();
+		unsigned int rozmiarTab;
+		int* tab = losowaTabIntFactory(rozmiarTab);
 		auto sigma = 0;
-		for (int j = 0; j < ROZMIAR_TAB_LOSOWEJ; j++) {
-			cout << tab[j] << ", ";
+		for (unsigned int j = 0; j < rozmiarTab; j++) {
+			if (j) cout << ", ";
+			cout << tab[j];
 			sigma += tab[j];
 		}
 		cout << endl;
