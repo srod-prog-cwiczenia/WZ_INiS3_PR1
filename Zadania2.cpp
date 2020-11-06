@@ -96,6 +96,26 @@ void Zadania2::zadaniaZeWskaznikow() {
 	}
 }
 
+void Zadania2::przeciazanieOperatorow()
+{
+	/*zadanie : utworzyæ strukturê DaneOso (jako klasê wewnêtrzn¹ klasy Zadania2) 
+	* w której 
+	* bêd¹ dane typu: imie, nazwisko, wiek.
+	* Przeci¹¿yæ odpowiednio operatory porównania < > oraz ! i ==.
+	*
+	* Temat na nastêpne zajêcia: A potem przeczytaæ albo omówiæ dlaczego stosujemy 
+	* przeci¹¿enie postaci operator()
+	*/
+	DaneOso oso1("Adam", "Kowalski", 25);
+	DaneOso oso2 = { "Anna", "Nowak", 20 };
+	DaneOso* oso3 = new DaneOso("Andrzej", "Kowalski", 30);
+	delete oso3;
+	/* jeœli nie chcemy ,,panowaæ'' sami nad usuwaniem wskaŸnika
+	przez delete to mo¿emy u¿yæ np. auto_ptr (s¹ to tak zwane "smart pointers": */
+	auto_ptr<DaneOso> oso4(new DaneOso("Andrzej", "Kowalski", 30));
+	//...i nie trzeba ju¿ wskŸnika oso4 zwalniaæ 
+}
+
 int* Zadania2::losowaTabIntFactory(unsigned int& dlugosc_p, unsigned int zadanyRozmiar)
 {
 	//generowanie ''losowej'' tablicy o ''losowym''
