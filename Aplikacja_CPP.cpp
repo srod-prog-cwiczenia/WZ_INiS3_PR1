@@ -4,6 +4,7 @@
 #include "pch.h"
 #include "Lista.h"
 #include "ListaFormatowana.h"
+#include "Zadania2.h"
 #include "TMenu.h"
 
 void podkreslenie() {
@@ -11,7 +12,7 @@ void podkreslenie() {
 }
 //zadanie: utworzyć tutaj klasę Zadania
 //i wypełnić ją metodami statycznymi zadaniaZObiektow oraz zadaniaZeWskaznikow()
-class Zadania {
+class Zadania : public Zadania2 {
 private:
 	//#define ROZMIAR_TAB_LOSOWEJ 10
 	//static constexpr auto ROZMIAR_TAB_LOSOWEJ = 10; - przypuszczalnie już zbędna
@@ -37,65 +38,11 @@ public:
 		lf->wypisanie();
 		delete lf;
 	}
-	static void zadaniaZeWskaznikow() {
-		cout << "TODO: zadanie ze wskaznikow\n";
-		//zadanie pierwsze
-		//napisać ilustrację działania wskaźnika na int,
-		//tzn zaalokować wskaźnik, nadać mu wartość a potem zwolnić wskaźnik:
-		{
-			int* wskI = new(int);
-			*wskI = 7;
-			assert(*wskI == 7); //test poprawności alokacji 
-			delete wskI;
-		}
-		//-------------------------
-		//zadanie drugie: napisać kod który wskazuje na zmienną int i
-		//i sprawdza (przez assert) czy ten wskaźnik faktycznie wskazuje na 7.
-		{
-			int i = 7;
-			int* wskI = &i; //tu tworzymy wskazanie na zmienną i
-			assert(*wskI == 7); //test poprawności wskazania
-		}
-		//zadanie trzecie (napisać sumowanie liczb w tablicy ale 
-        //za pomocą wskaźników).
-		{
-			//TODO zadanie domowe: opracować przebieg
-			//ale z generowaniem ''losowej'' tablicy o ''losowym''
-			//rozmiarze np od 2 -- 100;
-			int tab[] = { 30, 31, 20, 5 };
-			int sigma = 0;
-			for (int el : tab) sigma += el;
-			cout << "Suma tablicy wyliczona klasycznie to: " << sigma << endl;
-			// to samo ale na wskaźnikach:
-			int* wskI = tab; //aby wskazać jawnie rzutowanie
-			// to można użyć tej konstrukcji int *wskI = (int *)tab;
-			int sigma2 = 0;
-						
-			for (int j = 0; j < sizeof(tab) / sizeof(tab[0]); j++) {
-				sigma2 += *(wskI++);
-			}
-			cout << "Suma tablicy wyliczona wskaznikami to: " << sigma2 << endl;
-		}
-		{
-			// zadanie czwarte:
-			// mając daną deklarację dwuwymiarowej tablicy:
-			int tab2[10][10]; 
-			// uzupełnić ją iloczynami (klasyczne rozwiązanie - banalne)
-			// ale używając technologii wskaźników:
-			//int** wskI = (int **)tab2; //źle!!! bo tab2 to tak naprawdę int*
-			int* wskI = (int *)tab2;
-			for (int i = 0; i < 100; i++) {
-				*(wskI++) = (i / 10 + 1) * (i % 10 + 1);
-			}
-			for (int i = 0; i < 10; (i++, cout << endl))
-				for (int j = 0; j < 10; j++)
-					cout << tab2[i][j] << "\t";
-
-		}
-	}/*
+     /*
 	 zadanie: dodać tzw. ,,parametr domyślny'' w postaci 
 	 liczby unsigned int która podaje żądany rozmiar tablicy
 	 */
+    protected:
 	static int* losowaTabIntFactory(unsigned int &dlugosc_p,
 	  unsigned int zadanyRozmiar = 0) {
 		//generowanie ''losowej'' tablicy o ''losowym''
@@ -114,6 +61,7 @@ public:
 		return tab;
 		//delete[] tab;
 	}
+	public:
 	static void sumowanieTablicyLosowej() {
 		unsigned int rozmiarTab;
 		int* tab = losowaTabIntFactory(rozmiarTab, 13);
@@ -137,7 +85,6 @@ public:
 		delete[] tab;
 	}
 };
-
 
 int main() {
 	srand(time(NULL));

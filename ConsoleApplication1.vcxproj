@@ -156,6 +156,7 @@
     <ClInclude Include="ListaFormatowana.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="TMenu.h" />
+    <ClInclude Include="Zadania2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Aplikacja_CPP.cpp" />
@@ -168,6 +169,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TMenu.cpp" />
+    <ClCompile Include="Zadania2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
