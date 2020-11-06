@@ -92,12 +92,19 @@ public:
 					cout << tab2[i][j] << "\t";
 
 		}
-	}
-	static int* losowaTabIntFactory(unsigned int &dlugosc_p) {
-		//TODO zadanie domowe: opracować przebieg
-		//ale z generowaniem ''losowej'' tablicy o ''losowym''
-		//rozmiarze np od 2 -- 100 (na początek o stałym rozmiarze)
-		dlugosc_p = 10 + rand() % 100;
+	}/*
+	 zadanie: dodać tzw. ,,parametr domyślny'' w postaci 
+	 liczby unsigned int która podaje żądany rozmiar tablicy
+	 */
+	static int* losowaTabIntFactory(unsigned int &dlugosc_p,
+	  unsigned int zadanyRozmiar = 0) {
+		//generowanie ''losowej'' tablicy o ''losowym''
+		//rozmiarze np od 10 -- 110 
+		if (zadanyRozmiar) {
+			dlugosc_p = zadanyRozmiar;
+		} else {
+			dlugosc_p = 10 + rand() % 100;
+		}
 		int *tab = new int[dlugosc_p];
 		for (int j = 0; j < dlugosc_p; j++)
 			tab[j] = rand() % 1000;
@@ -109,7 +116,7 @@ public:
 	}
 	static void sumowanieTablicyLosowej() {
 		unsigned int rozmiarTab;
-		int* tab = losowaTabIntFactory(rozmiarTab);
+		int* tab = losowaTabIntFactory(rozmiarTab, 13);
 		auto sigma1 = 0;
 		for (unsigned int j = 0; j < rozmiarTab; j++) {
 			if (j) cout << ", "; /* aby nie było przecinka przez pierwszą liczbą */
@@ -118,6 +125,7 @@ public:
 		}
 		auto sigma2 = 0;
 		int* tabWsk = tab;
+		cout << endl;
 		for (unsigned int j = 0; j < rozmiarTab; j++) {
 			if (j) cout << ", "; /* aby nie było przecinka przez pierwszą liczbą */
 			cout << *tabWsk;
