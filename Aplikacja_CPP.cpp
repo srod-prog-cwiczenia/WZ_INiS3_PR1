@@ -110,14 +110,22 @@ public:
 	static void sumowanieTablicyLosowej() {
 		unsigned int rozmiarTab;
 		int* tab = losowaTabIntFactory(rozmiarTab);
-		auto sigma = 0;
+		auto sigma1 = 0;
 		for (unsigned int j = 0; j < rozmiarTab; j++) {
-			if (j) cout << ", ";
+			if (j) cout << ", "; /* aby nie było przecinka przez pierwszą liczbą */
 			cout << tab[j];
-			sigma += tab[j];
+			sigma1 += tab[j];
+		}
+		auto sigma2 = 0;
+		int* tabWsk = tab;
+		for (unsigned int j = 0; j < rozmiarTab; j++) {
+			if (j) cout << ", "; /* aby nie było przecinka przez pierwszą liczbą */
+			cout << *tabWsk;
+			sigma2 += *tabWsk++; //ostrożnie - ++ ma być zawsze w ostatniej linijce!
 		}
 		cout << endl;
-		cout << "Suma: " << sigma << endl;
+		cout << "Suma obliczona standarowo: " << sigma1 << endl;
+		cout << "Suma obliczona wskaźnikami: " << sigma2 << endl;
 		delete[] tab;
 	}
 };
