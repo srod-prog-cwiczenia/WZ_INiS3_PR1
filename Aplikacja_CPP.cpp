@@ -71,8 +71,9 @@ int main() {
 	srand(time(NULL));
 	for(;;) {
 		TMenu* mnu = new TMenu();
-		mnu->addAll(3, "Zadania z obiektow",
-		  "Zadania ze wskaźników", "Losowa tablica");
+		mnu->addAll(4, "Zadania z obiektow",
+		  "Zadania ze wskaźników", "Losowa tablica", 
+			"Sposoby przekazywania parametrów");
 		auto opcja = mnu->wybierz();
 		switch (opcja) {
 		case 1:
@@ -83,6 +84,9 @@ int main() {
 			break;
 		case 3:
 			Zadania::sumowanieTablicyLosowej();
+			break;
+		case 4:
+			Zadania::przekazywanieZmiennych();
 			break;
 		default:
 			break;

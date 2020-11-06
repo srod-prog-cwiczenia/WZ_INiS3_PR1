@@ -3,7 +3,40 @@
 
 void Zadania2::przekazywanieZmiennych()
 {
-  //TODO: uzupe³niæ!
+  //TODO: przetestowaæ trzy sposoby przekazywania parametrów:
+	//przez wartoœæ (int p), przez zmienn¹ (int &p) i przez
+	//wskaŸnik (int *p)
+	class Parametry {
+	public:
+		static void f1(int p) { //przez wartoœæ - ju¿ w jêzyku C
+			p += 7;
+		}; 
+		static void f2(int& p) { //przez zmienn¹ - tylko C++
+			p += 7;
+		}
+		static void f3(int* p) {//przez wska¿nik - jêzyk C, i to tam by³a jedyna metoda na przekazanie zmiennej
+			*p += 7;
+		}
+	};
+	for (int k = 0; k < 3; k++) {
+		int p = 1;
+		string opis;
+		switch (k) {
+		case 0:
+			Parametry::f1(p);
+			opis = "Przez wartoœæ: ";
+			break;
+		case 1:
+			Parametry::f2(p);
+			opis = "Przez zmienn¹: ";
+			break;
+		case 2:
+			Parametry::f3(&p);
+			opis = "Przez wskaŸnik: ";
+			break;
+		}
+		cout << opis << p << endl;
+	}
 }
 
 void Zadania2::zadaniaZeWskaznikow() {
