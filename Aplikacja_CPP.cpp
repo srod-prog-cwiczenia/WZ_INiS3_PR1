@@ -42,25 +42,6 @@ public:
 	 zadanie: dodać tzw. ,,parametr domyślny'' w postaci 
 	 liczby unsigned int która podaje żądany rozmiar tablicy
 	 */
-    protected:
-	static int* losowaTabIntFactory(unsigned int &dlugosc_p,
-	  unsigned int zadanyRozmiar = 0) {
-		//generowanie ''losowej'' tablicy o ''losowym''
-		//rozmiarze np od 10 -- 110 
-		if (zadanyRozmiar) {
-			dlugosc_p = zadanyRozmiar;
-		} else {
-			dlugosc_p = 10 + rand() % 100;
-		}
-		int *tab = new int[dlugosc_p];
-		for (int j = 0; j < dlugosc_p; j++)
-			tab[j] = rand() % 1000;
-		/*for (int j = 0; j < dlugosc_p; j++)
-			cout << tab[j] << ", ";
-		cout << endl;*/
-		return tab;
-		//delete[] tab;
-	}
 	public:
 	static void sumowanieTablicyLosowej() {
 		unsigned int rozmiarTab;
