@@ -46,9 +46,10 @@ int main() {
 	srand(time(NULL));
 	for(;;) {
 		TMenu* mnu = new TMenu();
-		mnu->addAll(4, "Zadania z obiektow",
+		mnu->addAll(5, "Zadania z obiektow",
 		  "Zadania ze wskaźników", "Losowa tablica", 
-			"Sposoby przekazywania parametrów");
+			"Sposoby przekazywania parametrów", 
+			"Przeładowywanie (=przeciążanie) operatorów - testy");
 		auto opcja = mnu->wybierz();
 		switch (opcja) {
 		case 1:
@@ -62,6 +63,9 @@ int main() {
 			break;
 		case 4:
 			Zadania::przekazywanieZmiennych();
+			break;
+		case 5:
+			Zadania::przeciazanieOperatorow();
 			break;
 		default:
 			break;

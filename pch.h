@@ -14,7 +14,7 @@
 #include <vector>
 #include <iostream>
 #include <cstdarg>
-#include <assert.h>
+#include <cassert>
 #include <time.h>
 using namespace std;
 
