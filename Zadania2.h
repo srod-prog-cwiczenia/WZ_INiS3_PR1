@@ -32,6 +32,16 @@ public:
 		/*friend bool operator != (const DaneOso& a, const DaneOso& b) {
 			return !(a == b);
 		}*/
+		/* TODO: prze³adowaæ operatory: < > <= >= dwoma konstrukcjami 
+		(friend bool operator < (const DaneOso& a, const DaneOso& b),
+		lub bool operator(const DaneOso& a), aktywowaæ tylko jedn¹ z nich 
+		UWAGA: pola z obiektu this wy³uskujemy przez this-> */
+	    /* przeci¹¿yæ + i += */
+		DaneOso operator + (const DaneOso& a) {
+			return DaneOso(this->imie + " " + a.imie, 
+				this->nazwisko + " " + a.nazwisko,
+				this->wiek + a.wiek);
+		}//TODO: napisaæ to samo ale z u¿yciem konstrukcji friend 
 	};
 	static void podkreslenie();
 	static void przekazywanieZmiennych();

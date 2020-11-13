@@ -161,13 +161,19 @@ void Zadania2::przeciazanieOperatorow()
 	przez delete to mo¿emy u¿yæ np. auto_ptr (s¹ to tak zwane "smart pointers": */
 	auto_ptr<DaneOso> oso4(new DaneOso("Andrzej", "Kowalski", 30));
 	//...i nie trzeba ju¿ wskŸnika oso4 zwalniaæ 
+//testy negacji
 	assert(!!oso1 && !!oso2); /*!! - pierwszy wykrzyknik od lewej to boolowska
 							  negacja, drugi wykrzyknik to prze³adowana negacja na DaneOso*/
 	assert(!DaneOso("", "", 0));
+//testy rzutowania:
 	cout << (string)oso1 << endl;
+	cout << (string)oso2 << endl;
+//testy operatorów porównañ:
 	assert(!(oso1 == oso2));
 	assert(DaneOso("Adam", "Nowak", 23) == DaneOso("Adam", "Nowak", 23));
 	assert(oso1 != oso2);
 	assert(!(DaneOso("Adam", "Nowak", 23) != DaneOso("Adam", "Nowak", 23)));
+//testy operatorów sumy:
+	cout << (string)(oso1 + oso2) << endl;
 	cout << "Testy przesz³y prawid³owo." << endl;
 }
