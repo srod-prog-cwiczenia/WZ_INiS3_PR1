@@ -1,5 +1,10 @@
 #include "pch.h"
 #include "Zadania2.h"
+#include "ListaFormatowana.h"
+
+void Zadania2::podkreslenie() {
+	cout << "-----------------------------------\n";
+}
 
 void Zadania2::przekazywanieZmiennych()
 {
@@ -136,4 +141,25 @@ int* Zadania2::losowaTabIntFactory(unsigned int& dlugosc_p, unsigned int zadanyR
 	//delete[] tab;
 }
 
+void Zadania2::zadaniaZObiektow() {
+	//std::cout << "Hello World!\n"; 
+	Lista li(10);
+	li.wypisanie();
+	podkreslenie();
+	//Æw : napisaæ to samo co wy¿ej ale u¿ywaj¹c new (podobnie jak w C#)
+	Lista* li2 = new Lista(5); //gwiazdka oznacza ¿e li2 jest ,,wskaŸnikiem'' (=pointerem).
+	li2->wypisanie(); // operator -> to operator 
+	delete li2;
+	/*przypomnijmy ¿e w C# powy¿sza sekwencja kodu by wygl¹da³a tak:
+	  Lista li2 = new Lista(5);
+	  li2.wypisanie();
+	*/
+	/*string txt;
+	cin >> txt;*/
+	podkreslenie();
+	// a teraz u¿yjemy klasy potomnej ListaSformatowana
+	ListaFormatowana* lf = new ListaFormatowana(5);
+	lf->wypisanie();
+	delete lf;
+}
 

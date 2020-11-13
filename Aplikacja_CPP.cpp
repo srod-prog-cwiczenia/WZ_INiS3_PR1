@@ -7,37 +7,12 @@
 #include "Zadania2.h"
 #include "TMenu.h"
 
-void podkreslenie() {
-	cout << "-----------------------------------\n";
-}
 //zadanie: utworzyć tutaj klasę Zadania
 //i wypełnić ją metodami statycznymi zadaniaZObiektow oraz zadaniaZeWskaznikow()
 class Zadania : public Zadania2 {
 private:
 	//#define ROZMIAR_TAB_LOSOWEJ 10
 	//static constexpr auto ROZMIAR_TAB_LOSOWEJ = 10; - przypuszczalnie już zbędna
-public:
-	static void zadaniaZObiektow() {
-		//std::cout << "Hello World!\n"; 
-		Lista li(10);
-		li.wypisanie();
-		podkreslenie();
-		//Ćw : napisać to samo co wyżej ale używając new (podobnie jak w C#)
-		Lista *li2 = new Lista(5); //gwiazdka oznacza że li2 jest ,,wskaźnikiem'' (=pointerem).
-		li2->wypisanie(); // operator -> to operator 
-		delete li2;
-		/*przypomnijmy że w C# powyższa sekwencja kodu by wyglądała tak:
-		  Lista li2 = new Lista(5);
-		  li2.wypisanie();
-		*/
-		/*string txt;
-		cin >> txt;*/
-		podkreslenie();
-		// a teraz użyjemy klasy potomnej ListaSformatowana
-		ListaFormatowana *lf = new ListaFormatowana(5);
-		lf->wypisanie();
-		delete lf;
-	}
      /*
 	 zadanie: dodać tzw. ,,parametr domyślny'' w postaci 
 	 liczby unsigned int która podaje żądany rozmiar tablicy
