@@ -162,5 +162,6 @@ void Zadania2::przeciazanieOperatorow()
 	auto_ptr<DaneOso> oso4(new DaneOso("Andrzej", "Kowalski", 30));
 	//...i nie trzeba ju¿ wskŸnika oso4 zwalniaæ 
 	assert(!oso1 && !oso2);
+	cout << (string)oso1 << endl;
 	cout << "Testy przesz³y prawid³owo." << endl;
 }
