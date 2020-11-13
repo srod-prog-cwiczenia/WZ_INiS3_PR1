@@ -165,5 +165,8 @@ void Zadania2::przeciazanieOperatorow()
 							  negacja, drugi wykrzyknik to prze³adowana negacja na DaneOso*/
 	assert(!DaneOso("", "", 0));
 	cout << (string)oso1 << endl;
+	assert(!(oso1 == oso2));
+	assert(DaneOso("Adam", "Nowak", 23) == DaneOso("Adam", "Nowak", 23));
+	assert(oso1 != oso2);
 	cout << "Testy przesz³y prawid³owo." << endl;
 }

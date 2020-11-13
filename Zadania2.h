@@ -17,6 +17,17 @@ public:
 		operator string() {
 			return imie + " " + nazwisko + " " + to_string(wiek);
 		}
+        /* prze³adowanie operatora porównania */
+		/*bool operator == (const DaneOso& a) {
+			return a.imie == imie && a.nazwisko == nazwisko && a.wiek == wiek;
+		}*/
+		/*równowa¿nie mo¿na napisaæ to tak:*/
+		friend bool operator == (const DaneOso& a, const DaneOso& b) {
+			return a.imie == b.imie && a.nazwisko == b.nazwisko && a.wiek == b.wiek;
+		}
+		friend bool operator != (const DaneOso& a, const DaneOso& b) {
+			return !(a == b);
+		}
 	};
 	static void podkreslenie();
 	static void przekazywanieZmiennych();
