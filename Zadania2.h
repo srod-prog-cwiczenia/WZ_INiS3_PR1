@@ -8,8 +8,8 @@ public:
 			imie(imie_p), nazwisko(nazwisko_p), wiek(wiek_p) {};
 		/* prze³adowanie operatora negacji */
 		bool operator! () {
-			return !imie.empty() || !nazwisko.empty() || wiek; 
-			/*zamiast wiek != 0 mo¿na napisaæ po prostu wiek, bo 
+			return imie.empty() && nazwisko.empty() && !wiek; 
+			/*zamiast wiek == 0 mo¿na napisaæ po prostu !wiek, bo 
 			int jest rzutowane do bool wed³ug schematu: 0 -> false, 
 			wszystko inne ró¿ne od zera -> true */
 		}
