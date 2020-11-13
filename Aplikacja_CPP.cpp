@@ -43,7 +43,7 @@ private:
 };
 
 int main() {
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	for(;;) {
 		TMenu* mnu = new TMenu();
 		mnu->addAll(5, "Zadania z obiektow",

@@ -112,7 +112,7 @@ int* Zadania2::losowaTabIntFactory(unsigned int& dlugosc_p, unsigned int zadanyR
 		dlugosc_p = 10 + rand() % 100;
 	}
 	int* tab = new int[dlugosc_p];
-	for (int j = 0; j < dlugosc_p; j++)
+	for (unsigned int j = 0; j < dlugosc_p; j++)
 		tab[j] = rand() % 1000;
 	/*for (int j = 0; j < dlugosc_p; j++)
 		cout << tab[j] << ", ";
@@ -168,5 +168,6 @@ void Zadania2::przeciazanieOperatorow()
 	assert(!(oso1 == oso2));
 	assert(DaneOso("Adam", "Nowak", 23) == DaneOso("Adam", "Nowak", 23));
 	assert(oso1 != oso2);
+	assert(!(DaneOso("Adam", "Nowak", 23) != DaneOso("Adam", "Nowak", 23)));
 	cout << "Testy przesz³y prawid³owo." << endl;
 }
