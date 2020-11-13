@@ -175,5 +175,9 @@ void Zadania2::przeciazanieOperatorow()
 	assert(!(DaneOso("Adam", "Nowak", 23) != DaneOso("Adam", "Nowak", 23)));
 //testy operatorów sumy:
 	cout << (string)(oso1 + oso2) << endl;
+//test +=:
+	DaneOso oso5 = oso1;
+	oso5 += oso2;
+	cout << (string)oso5;
 	cout << "Testy przesz³y prawid³owo." << endl;
 }

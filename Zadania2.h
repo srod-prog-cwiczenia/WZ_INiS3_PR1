@@ -42,7 +42,13 @@ public:
 				this->nazwisko + " " + a.nazwisko,
 				this->wiek + a.wiek);
 		}//TODO: napisaæ to samo ale z u¿yciem konstrukcji friend 
-	};
+		DaneOso &operator += (const DaneOso& a) {
+			this->imie += a.imie;
+			this->nazwisko += a.nazwisko;
+			this->wiek += a.wiek;
+			return *this;
+		}
+	};  
 	static void podkreslenie();
 	static void przekazywanieZmiennych();
 	static void zadaniaZeWskaznikow();
