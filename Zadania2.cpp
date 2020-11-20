@@ -163,6 +163,20 @@ void Zadania2::mapowanieOsoKwota()
 	for (auto oso : tabOso)
 		mapOsoKw[oso] = (kw += 1000.0);
 	wypisanieMapyOsoKwota(mapOsoKw);
+	for (;;) {
+		string imie, nazwisko;
+		unsigned int wiek;
+		cout << "Imie: ";
+		if (imie.empty()) break;
+		cin >> imie;
+		cout << "Nazwisko: ";
+		cin >> nazwisko;
+		if (nazwisko.empty()) break;
+		cout << "Wiek: ";
+		cin >> wiek;
+		DaneOso oso = { imie, nazwisko, wiek };
+ // tak nie:		cout << mapOsoKw[oso];
+	}
 }
 
 void Zadania2::przeciazanieOperatorow()
