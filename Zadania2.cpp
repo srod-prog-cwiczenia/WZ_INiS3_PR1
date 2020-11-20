@@ -142,7 +142,6 @@ void Zadania2::zadaniaZObiektow() {
 	lf->wypisanie();
 	delete lf;
 }
-
 void Zadania2::mapowanieOsoKwota()
 {
 	/*
@@ -151,12 +150,19 @@ void Zadania2::mapowanieOsoKwota()
 	Dodaæ dane testowe i oprogramowaæ sczytywanie kwoty 
 	dla podanej osoby ,,z rêki''.
 	*/
+	/*funkcja lokalna (zwana ,,lambda funkcj¹'') do wydrukowania zawartoœci mapy  */
+	auto wypisanieMapyOsoKwota = [] (const TMapaOsoKwota & map) -> void {
+		for (auto ele : map) {
+			cout << (string)ele.first << " -> " << ele.second << endl;
+		}
+	};
 	map<DaneOso, double> mapOsoKw;
 	DaneOso tabOso[3] = { {"Anna", "Kowalska", 25}, {"Adam", "Kowalski", 26},
 		{"Dorota", "Nowak", 20 } };
 	double kw = 0.0;
 	for (auto oso : tabOso)
 		mapOsoKw[oso] = (kw += 1000.0);
+	wypisanieMapyOsoKwota(mapOsoKw);
 }
 
 void Zadania2::przeciazanieOperatorow()

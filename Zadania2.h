@@ -79,3 +79,4 @@ public:
 protected:
 	static int* losowaTabIntFactory(unsigned int& dlugosc_p, unsigned int zadanyRozmiar = 0);
 };
+typedef map<Zadania2::DaneOso, double> TMapaOsoKwota;
