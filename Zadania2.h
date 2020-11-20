@@ -38,14 +38,15 @@ public:
 		UWAGA: pola z obiektu this wy³uskujemy przez this-> */
 	    /* przeci¹¿yæ + i += */
 		bool operator < (const DaneOso& a) {
-			return (string)(*this) < (string)a; //- TODO: dlaczego 
-			// nie przechodzi rzutowanie a na string?
-			/*if (nazwisko < a.nazwisko) return true;
+			//return (string)(*this) < (string)a; //- dlaczego 
+			// nie przechodzi rzutowanie a na string - odpowiedŸ : 
+			// brakowa³o const {} w prze³adowaniu rzutowania (string).
+			if (nazwisko < a.nazwisko) return true;
 			if (nazwisko > a.nazwisko) return false;
 			if (imie < a.imie) return true;
 			if (imie > a.imie) return false;
 			if (wiek < a.wiek) return true;
-			return false;*/
+			return false;
 		}
 		DaneOso operator + (const DaneOso& a) {
 			return DaneOso(this->imie + " " + a.imie, 
