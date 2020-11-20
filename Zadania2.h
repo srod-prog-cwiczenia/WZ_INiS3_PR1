@@ -14,7 +14,7 @@ public:
 			wszystko inne ró¿ne od zera -> true */
 		}
 		/* prze³adowanie operatora rzutowania */
-		operator string() {
+		operator string() const {
 			return imie + " " + nazwisko + " " + to_string(wiek);
 		}
         /* prze³adowanie operatorów porównañ (== i !=) */
@@ -37,6 +37,16 @@ public:
 		lub bool operator(const DaneOso& a), aktywowaæ tylko jedn¹ z nich 
 		UWAGA: pola z obiektu this wy³uskujemy przez this-> */
 	    /* przeci¹¿yæ + i += */
+		bool operator < (const DaneOso& a) {
+			return (string)(*this) < (string)a; //- TODO: dlaczego 
+			// nie przechodzi rzutowanie a na string?
+			/*if (nazwisko < a.nazwisko) return true;
+			if (nazwisko > a.nazwisko) return false;
+			if (imie < a.imie) return true;
+			if (imie > a.imie) return false;
+			if (wiek < a.wiek) return true;
+			return false;*/
+		}
 		DaneOso operator + (const DaneOso& a) {
 			return DaneOso(this->imie + " " + a.imie, 
 				this->nazwisko + " " + a.nazwisko,
