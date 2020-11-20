@@ -143,6 +143,18 @@ void Zadania2::zadaniaZObiektow() {
 	delete lf;
 }
 
+void Zadania2::mapowanieOsoKwota()
+{
+	cout << "TODO\n";
+	/*
+	* 
+	zadanie : zadeklarowaæ obiekt typu map który mapuje DaneOso na kwotê.
+	Dodaæ dane testowe i oprogramowaæ sczytywanie kwoty 
+	dla podanej osoby ,,z rêki''.
+	*/
+
+}
+
 void Zadania2::przeciazanieOperatorow()
 {
 	/*zadanie : utworzyæ strukturê DaneOso (jako klasê wewnêtrzn¹ klasy Zadania2)

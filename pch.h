@@ -12,6 +12,7 @@
 // TODO: w tym miejscu dodaj nagłówki, które mają być wstępnie kompilowane
 #include <string>
 #include <vector>
+#include <map>
 #include <iostream>
 #include <cstdarg>
 #include <cassert>

@@ -65,6 +65,7 @@ public:
 	static void zadaniaZeWskaznikow();
 	static void przeciazanieOperatorow();
 	static void zadaniaZObiektow();
+	static void mapowanieOsoKwota();
 protected:
 	static int* losowaTabIntFactory(unsigned int& dlugosc_p, unsigned int zadanyRozmiar = 0);
 };
