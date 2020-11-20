@@ -37,6 +37,16 @@ public:
 		lub bool operator(const DaneOso& a), aktywowaæ tylko jedn¹ z nich 
 		UWAGA: pola z obiektu this wy³uskujemy przez this-> */
 	    /* przeci¹¿yæ + i += */
+		friend bool operator < (const DaneOso& a, const DaneOso& b) {
+			// taka postaæ prze³adowania jest wymagana gdy 
+			// u¿ywamy DaneOso jako klucze np w mapowaniu przez std::map
+			if (a.nazwisko < b.nazwisko) return true;
+			if (a.nazwisko > b.nazwisko) return false;
+			if (a.imie < b.imie) return true;
+			if (a.imie > b.imie) return false;
+			if (a.wiek < b.wiek) return true;
+			return false;
+		}
 		bool operator < (const DaneOso& a) {
 			//return (string)(*this) < (string)a; //- dlaczego 
 			// nie przechodzi rzutowanie a na string - odpowiedŸ : 

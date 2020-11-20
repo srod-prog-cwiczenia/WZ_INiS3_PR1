@@ -145,14 +145,18 @@ void Zadania2::zadaniaZObiektow() {
 
 void Zadania2::mapowanieOsoKwota()
 {
-	cout << "TODO\n";
 	/*
 	* 
 	zadanie : zadeklarowaæ obiekt typu map który mapuje DaneOso na kwotê.
 	Dodaæ dane testowe i oprogramowaæ sczytywanie kwoty 
 	dla podanej osoby ,,z rêki''.
 	*/
-
+	map<DaneOso, double> mapOsoKw;
+	DaneOso tabOso[3] = { {"Anna", "Kowalska", 25}, {"Adam", "Kowalski", 26},
+		{"Dorota", "Nowak", 20 } };
+	double kw = 0.0;
+	for (auto oso : tabOso)
+		mapOsoKw[oso] = (kw += 1000.0);
 }
 
 void Zadania2::przeciazanieOperatorow()
