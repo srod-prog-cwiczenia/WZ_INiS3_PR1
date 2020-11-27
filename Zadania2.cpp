@@ -156,27 +156,32 @@ void Zadania2::mapowanieOsoKwota()
 			cout << (string)ele.first << " -> " << ele.second << endl;
 		}
 	};
-	map<DaneOso, double> mapOsoKw;
+	TMapaOsoKwota mapOsoKw;
 	DaneOso tabOso[3] = { {"Anna", "Kowalska", 25}, {"Adam", "Kowalski", 26},
 		{"Dorota", "Nowak", 20 } };
 	double kw = 0.0;
-	for (auto oso : tabOso)
+	for (const auto &oso : tabOso)
 		mapOsoKw[oso] = (kw += 1000.0);
 	wypisanieMapyOsoKwota(mapOsoKw);
 	for (;;) {
 		string imie, nazwisko;
 		unsigned int wiek;
 		cout << "Imie: ";
-		if (imie.empty()) break;
 		cin >> imie;
+		if (imie.empty()) break;
 		cout << "Nazwisko: ";
 		cin >> nazwisko;
 		if (nazwisko.empty()) break;
 		cout << "Wiek: ";
 		cin >> wiek;
+		if (!wiek) break;
 		DaneOso oso = { imie, nazwisko, wiek };
- // tak nie:		cout << mapOsoKw[oso];
+		if (mapOsoKw.find(oso) != mapOsoKw.end())
+			cout << mapOsoKw[oso] << endl;
+		else
+			cout << "Nie ma takiej osoby w mapie\n";
 	}
+	//wypisanieMapyOsoKwota(mapOsoKw);
 }
 
 void Zadania2::przeciazanieOperatorow()
