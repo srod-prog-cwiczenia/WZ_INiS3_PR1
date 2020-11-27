@@ -141,6 +141,8 @@ void Zadania2::zadaniaZObiektow() {
 	ListaFormatowana* lf = new ListaFormatowana(5);
 	lf->wypisanie();
 	delete lf;
+	/*TODO: 1. zdefiniowaæ typ funkcyjny (,,wskaŸnik na funkcjê") 
+	funkcji formatuj¹cej */
 }
 void Zadania2::mapowanieOsoKwota()
 {
@@ -152,7 +154,7 @@ void Zadania2::mapowanieOsoKwota()
 	*/
 	/*funkcja lokalna (zwana ,,lambda funkcj¹'') do wydrukowania zawartoœci mapy  */
 	auto wypisanieMapyOsoKwota = [] (const TMapaOsoKwota & map) -> void {
-		for (auto ele : map) {
+		for (const auto &ele : map) {
 			cout << (string)ele.first << " -> " << ele.second << endl;
 		}
 	};

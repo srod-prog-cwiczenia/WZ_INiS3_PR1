@@ -7,7 +7,7 @@ public:
 		DaneOso(string imie_p, string nazwisko_p, unsigned int wiek_p) :
 			imie(imie_p), nazwisko(nazwisko_p), wiek(wiek_p) {};
 		/* prze³adowanie operatora negacji */
-		bool operator! () {
+		bool operator! () const {
 			return imie.empty() && nazwisko.empty() && !wiek; 
 			/*zamiast wiek == 0 mo¿na napisaæ po prostu !wiek, bo 
 			int jest rzutowane do bool wed³ug schematu: 0 -> false, 
@@ -18,10 +18,10 @@ public:
 			return imie + " " + nazwisko + " " + to_string(wiek);
 		}
         /* prze³adowanie operatorów porównañ (== i !=) */
-		bool operator == (const DaneOso& a) {
+		bool operator == (const DaneOso& a) const {
 			return a.imie == imie && a.nazwisko == nazwisko && a.wiek == wiek;
 		}
-		bool operator != (const DaneOso& a) {
+		bool operator != (const DaneOso& a) const {
 			//return a.imie != imie || a.nazwisko != nazwisko || a.wiek != wiek;
 			return !(*this == a);
 		}
@@ -47,7 +47,7 @@ public:
 			if (a.wiek < b.wiek) return true;
 			return false;
 		}
-		bool operator < (const DaneOso& a) {
+		/*bool operator < (const DaneOso& a) {
 			//return (string)(*this) < (string)a; //- dlaczego 
 			// nie przechodzi rzutowanie a na string - odpowiedŸ : 
 			// brakowa³o const {} w prze³adowaniu rzutowania (string).
@@ -57,7 +57,7 @@ public:
 			if (imie > a.imie) return false;
 			if (wiek < a.wiek) return true;
 			return false;
-		}
+		}*/
 		DaneOso operator + (const DaneOso& a) {
 			return DaneOso(this->imie + " " + a.imie, 
 				this->nazwisko + " " + a.nazwisko,
