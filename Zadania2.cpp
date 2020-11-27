@@ -145,9 +145,16 @@ void Zadania2::zadaniaZObiektow() {
 	funkcji formatuj¹cej string -> string [DONE]
 	2. Wprowadziæ zmienn¹ (pole klasy Lista) funkcyjn¹ tego typu
 	i inicjowaæ je w klasie Lista. [DONE]
-	3. Gdy bêdzie ustawione to pole to je uruchamiaæ
+	3. Gdy bêdzie ustawione to pole to je uruchamiaæ [DONE]
 	4. Zaimplementowaæ to do formatowania listy ³añcuchów z klasy 
 	Lista*/
+	cout << "\nFormatowanie z uzyciem callbacka:\n";
+	Lista li3(10);
+	li3.setFormatowanieCallback([](const string& txt_p) -> string {
+		return txt_p + ".";
+		});
+	li3.wypisanie();
+	podkreslenie();
 }
 void Zadania2::mapowanieOsoKwota()
 {
