@@ -23,7 +23,11 @@ Lista::~Lista()
 //string Lista::formatuj(string txt_p)
 string Lista::formatuj(const string &txt_p)
 {
-	return txt_p; // brak formatowania
+	if (formatowanieCallback != NULL) {
+		return formatowanieCallback(txt_p);
+	} else {
+		return txt_p; // brak formatowania
+	}
 }
 
 void Lista::wypisanie()
@@ -34,4 +38,9 @@ void Lista::wypisanie()
 	na u¿ycie powy¿szej konstrukcji? A to: :) */
 	/*for (int i = 0; i < vec.size(); i++)
 		cout << vec[i] << endl;   */ 
+}
+
+void Lista::setFormatowanieCallback(TFunkcjaFormatujaca fc)
+{
+	formatowanieCallback = fc;
 }

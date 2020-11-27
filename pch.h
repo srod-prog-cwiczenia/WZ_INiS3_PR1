@@ -18,5 +18,5 @@
 #include <cassert>
 #include <time.h>
 using namespace std;
-
+typedef string (*TFunkcjaFormatujaca)(const string&);
 #endif //PCH_H

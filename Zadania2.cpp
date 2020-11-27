@@ -142,7 +142,12 @@ void Zadania2::zadaniaZObiektow() {
 	lf->wypisanie();
 	delete lf;
 	/*TODO: 1. zdefiniowaæ typ funkcyjny (,,wskaŸnik na funkcjê") 
-	funkcji formatuj¹cej */
+	funkcji formatuj¹cej string -> string [DONE]
+	2. Wprowadziæ zmienn¹ (pole klasy Lista) funkcyjn¹ tego typu
+	i inicjowaæ je w klasie Lista. [DONE]
+	3. Gdy bêdzie ustawione to pole to je uruchamiaæ
+	4. Zaimplementowaæ to do formatowania listy ³añcuchów z klasy 
+	Lista*/
 }
 void Zadania2::mapowanieOsoKwota()
 {
