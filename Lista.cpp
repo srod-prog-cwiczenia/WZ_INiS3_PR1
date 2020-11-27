@@ -39,6 +39,26 @@ void Lista::wypisanie()
 	/*for (int i = 0; i < vec.size(); i++)
 		cout << vec[i] << endl;   */ 
 }
+void Lista::wypisanieZUzyciemFunktora()
+{
+	struct FunLicznik { // to jest funktor, czyli funkcja
+		//zdefiniowana jako klasa z prze³adowaniem operatora () i 
+		//taki funktor mo¿e posiadaæ stan
+	private:
+		unsigned int licznik;
+	public:
+		FunLicznik() : licznik(0) {};
+		string operator ()(const string& txt_p) { 
+			return to_string(++licznik) + ". " + txt_p; }
+	};
+	/*to co poni¿ej to tylko próba, potem trzeba to dokoñczyæ:*/
+	FunLicznik licz, licz2;
+	cout << licz("aaa") << endl;
+	cout << licz2("bbb") << endl;
+	cout << licz("aaa") << endl;
+	cout << licz2("bbb") << endl;
+	cout << licz("aaa") << endl;
+}
 
 void Lista::setFormatowanieCallback(TFunkcjaFormatujaca fc)
 {

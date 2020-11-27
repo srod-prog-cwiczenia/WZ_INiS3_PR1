@@ -198,6 +198,13 @@ void Zadania2::mapowanieOsoKwota()
 	//wypisanieMapyOsoKwota(mapOsoKw);
 }
 
+void Zadania2::zadaniaZFunktorow()
+{
+	Lista li(10);
+	li.wypisanieZUzyciemFunktora();
+
+}
+
 void Zadania2::przeciazanieOperatorow()
 {
 	/*zadanie : utworzyæ strukturê DaneOso (jako klasê wewnêtrzn¹ klasy Zadania2)
