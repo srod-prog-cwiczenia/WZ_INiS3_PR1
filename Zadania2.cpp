@@ -200,9 +200,20 @@ void Zadania2::mapowanieOsoKwota()
 
 void Zadania2::zadaniaZFunktorow()
 {
+	struct FunLicznik { // to jest funktor, czyli funkcja
+	//zdefiniowana jako klasa z prze³adowaniem operatora () i 
+	//taki funktor mo¿e posiadaæ stan
+	private:
+		unsigned int licznik;
+	public:
+		FunLicznik() : licznik(0) {};
+		string operator ()(const string& txt_p) {
+			return to_string(++licznik) + ". " + txt_p;
+		}
+	};
+	FunLicznik licz;
 	Lista li(10);
-	li.wypisanieZUzyciemFunktora();
-
+	li.wypisanieZUzyciemFunktora(&licz);
 }
 
 void Zadania2::przeciazanieOperatorow()

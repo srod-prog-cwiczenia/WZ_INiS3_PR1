@@ -15,7 +15,7 @@ public:
 	przeksza³canie zawartoœci wektora zrealizowaæ przez 
 	transform z modu³u <algorithm>
 	*/
-	void wypisanieZUzyciemFunktora();
+	void wypisanieZUzyciemFunktora(void* wskNaFunktor);
 	void setFormatowanieCallback(TFunkcjaFormatujaca fc);
 private:
 	virtual string formatuj(const string &txt_p);

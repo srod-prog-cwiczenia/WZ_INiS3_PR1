@@ -39,7 +39,10 @@ void Lista::wypisanie()
 	/*for (int i = 0; i < vec.size(); i++)
 		cout << vec[i] << endl;   */ 
 }
-void Lista::wypisanieZUzyciemFunktora()
+void Lista::wypisanieZUzyciemFunktora(void* wskNaFunktor)
+/*void * to tak zwany wskaŸnik generyczny,
+to znaczy wskaŸnik nie na ,,pustkê'' ;) ale na dowolny element
+czyli de facto jest to adres pamiêci */
 {
 	struct FunLicznik { // to jest funktor, czyli funkcja
 		//zdefiniowana jako klasa z prze³adowaniem operatora () i 
@@ -51,15 +54,29 @@ void Lista::wypisanieZUzyciemFunktora()
 		string operator ()(const string& txt_p) { 
 			return to_string(++licznik) + ". " + txt_p; }
 	};
-	/*to co poni¿ej to tylko próba, potem trzeba to dokoñczyæ:*/
-	FunLicznik licz, licz2;
-	cout << licz("aaa") << endl;
-	cout << licz2("bbb") << endl;
-	cout << licz("aaa") << endl;
-	cout << licz2("bbb") << endl;
-	cout << licz("aaa") << endl;
-}
 
+	struct FunPusty { // to jest funktor ,,pusty'', celem próby 
+		//rzutowania wskaŸnika generycznego
+	public:
+		FunPusty() {};
+		string operator ()(const string& txt_p) {
+			return "DUMMY";
+		}
+	};
+
+	FunPusty* licznik = (FunPusty*)wskNaFunktor; // - tak ,,wy³uskujemy'' wskaŸnik na funktor
+	//ale nie u¿ywamy go dalej z uwagi na trudnoœci z rzutowaniem (nie dzia³a licznik)
+/*	FunLicznik licz, licz2;
+	cout << licz("aaa") << endl;
+	cout << licz2("bbb") << endl;
+	cout << licz("aaa") << endl;
+	cout << licz2("bbb") << endl;
+	cout << licz("aaa") << endl; */ //to by³o dla testów by sprawdziæ dzia³anie funktora
+	FunLicznik licz;
+	for (string txt : vec)
+		cout << licz(txt) << endl;
+
+}
 void Lista::setFormatowanieCallback(TFunkcjaFormatujaca fc)
 {
 	formatowanieCallback = fc;

@@ -72,7 +72,7 @@ int main() {
 			Zadania::mapowanieOsoKwota();
 			break;
 		case 7:
-			Zadania::zadaniaZFunktorow();
+			Zadania::zadaniaZFunktorow(); 
 			break;
 		default:
 			break;
