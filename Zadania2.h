@@ -8,6 +8,13 @@ public:
 	T getX() { return x; }
 	T getY() { return y; }
 };
+
+template <typename T>
+class TStosInteface{
+	virtual void push(const T& ele) = 0;
+	virtual T pop() = 0;
+};
+
 class Zadania2 {
 public:
 	struct DaneOso { //klasa wewnêtrzna

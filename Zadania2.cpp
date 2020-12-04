@@ -225,6 +225,8 @@ void Zadania2::zadaniaZSzablonow()
 
 	TPara<unsigned int> i2(7, 13);
 	cout << i2.getX() << " i " << i2.getY() << endl;
+	/*zadanie: napisaæ szablon TStos którego interface
+	jest w Zadania2 jako TStosInteface */
 }
 
 void Zadania2::przeciazanieOperatorow()
