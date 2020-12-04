@@ -220,6 +220,11 @@ void Zadania2::zadaniaZSzablonow()
 {
 	/*utworzyæ szablon na trzymanie dwóch (a potem wiêcej - ,,stos'')
 	elementów dowolnego typu.*/
+	TPara<string> p2("Ala", "As");
+	cout << p2.getX() << " i " << p2.getY() << endl;
+
+	TPara<unsigned int> i2(7, 13);
+	cout << i2.getX() << " i " << i2.getY() << endl;
 }
 
 void Zadania2::przeciazanieOperatorow()

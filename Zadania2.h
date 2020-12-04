@@ -1,4 +1,13 @@
 #pragma once
+template <typename T>
+class TPara {
+private:
+	T x, y;
+public:
+	TPara(const T& xp, const T& yp) : x(xp), y(yp) {}
+	T getX() { return x; }
+	T getY() { return y; }
+};
 class Zadania2 {
 public:
 	struct DaneOso { //klasa wewnêtrzna
