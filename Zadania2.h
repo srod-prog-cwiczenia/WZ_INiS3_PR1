@@ -77,6 +77,7 @@ public:
 	static void zadaniaZObiektow();
 	static void mapowanieOsoKwota();
 	static void zadaniaZFunktorow();
+	static void zadaniaZSzablonow();
 protected:
 	static int* losowaTabIntFactory(unsigned int& dlugosc_p, unsigned int zadanyRozmiar = 0);
 	typedef map<DaneOso, double> TMapaOsoKwota;

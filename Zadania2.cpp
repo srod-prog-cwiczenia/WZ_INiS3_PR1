@@ -216,6 +216,12 @@ void Zadania2::zadaniaZFunktorow()
 	li.wypisanieZUzyciemFunktora(&licz);
 }
 
+void Zadania2::zadaniaZSzablonow()
+{
+	/*utworzyæ szablon na trzymanie dwóch (a potem wiêcej - ,,stos'')
+	elementów dowolnego typu.*/
+}
+
 void Zadania2::przeciazanieOperatorow()
 {
 	/*zadanie : utworzyæ strukturê DaneOso (jako klasê wewnêtrzn¹ klasy Zadania2)

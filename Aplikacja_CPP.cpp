@@ -46,11 +46,13 @@ int main() {
 	srand((unsigned int)time(NULL));
 	for(;;) {
 		TMenu* mnu = new TMenu();
-		mnu->addAll(7, "Zadania z obiektow",
+		mnu->addAll(8, "Zadania z obiektow",
 		  "Zadania ze wskaźników", "Losowa tablica", 
 			"Sposoby przekazywania parametrów", 
 			"Przeładowywanie (=przeciążanie) operatorów - testy", 
-			"test mapowania DaneOso -> double ", "Zadania z pojęcia funktorów");
+			"test mapowania DaneOso -> double ", 
+			"Zadania z pojęcia funktorów", 
+			"Zadania z szablonów");
 		auto opcja = mnu->wybierz();
 		switch (opcja) {
 		case 1:
@@ -73,6 +75,9 @@ int main() {
 			break;
 		case 7:
 			Zadania::zadaniaZFunktorow(); 
+			break;
+		case 8:
+			Zadania::zadaniaZSzablonow();
 			break;
 		default:
 			break;
