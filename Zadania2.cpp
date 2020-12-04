@@ -227,6 +227,9 @@ void Zadania2::zadaniaZSzablonow()
 	cout << i2.getX() << " i " << i2.getY() << endl;
 	/*zadanie: napisaæ szablon TStos którego interface
 	jest w Zadania2 jako TStosInteface */
+	//przyk³adowa konkretyzacja:
+	TStos<int> iStack;
+	iStack.push(13);
 }
 
 void Zadania2::przeciazanieOperatorow()
